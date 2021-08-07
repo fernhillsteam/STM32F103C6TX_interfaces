@@ -1,0 +1,26 @@
+--cpu=Cortex-M4.fp.sp
+"ultrasonic\startup_stm32f401xe.o"
+"ultrasonic\main.o"
+"ultrasonic\stm32f4xx_it.o"
+"ultrasonic\stm32f4xx_hal_msp.o"
+"ultrasonic\lcd_character.o"
+"ultrasonic\stm32f4xx_hal_tim.o"
+"ultrasonic\stm32f4xx_hal_tim_ex.o"
+"ultrasonic\stm32f4xx_hal_rcc.o"
+"ultrasonic\stm32f4xx_hal_rcc_ex.o"
+"ultrasonic\stm32f4xx_hal_flash.o"
+"ultrasonic\stm32f4xx_hal_flash_ex.o"
+"ultrasonic\stm32f4xx_hal_flash_ramfunc.o"
+"ultrasonic\stm32f4xx_hal_gpio.o"
+"ultrasonic\stm32f4xx_hal_dma_ex.o"
+"ultrasonic\stm32f4xx_hal_dma.o"
+"ultrasonic\stm32f4xx_hal_pwr.o"
+"ultrasonic\stm32f4xx_hal_pwr_ex.o"
+"ultrasonic\stm32f4xx_hal_cortex.o"
+"ultrasonic\stm32f4xx_hal.o"
+"ultrasonic\stm32f4xx_hal_exti.o"
+"ultrasonic\system_stm32f4xx.o"
+--library_type=microlib --strict --scatter "Ultrasonic\Ultrasonic.sct"
+--summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list "Ultrasonic.map" -o Ultrasonic\Ultrasonic.axf

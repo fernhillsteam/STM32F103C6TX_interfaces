@@ -1,0 +1,25 @@
+--cpu=Cortex-M4.fp.sp
+"keypad\startup_stm32f401xe.o"
+"keypad\main.o"
+"keypad\stm32f4xx_it.o"
+"keypad\stm32f4xx_hal_msp.o"
+"keypad\stm32f4xx_hal_tim.o"
+"keypad\stm32f4xx_hal_tim_ex.o"
+"keypad\stm32f4xx_hal_rcc.o"
+"keypad\stm32f4xx_hal_rcc_ex.o"
+"keypad\stm32f4xx_hal_flash.o"
+"keypad\stm32f4xx_hal_flash_ex.o"
+"keypad\stm32f4xx_hal_flash_ramfunc.o"
+"keypad\stm32f4xx_hal_gpio.o"
+"keypad\stm32f4xx_hal_dma_ex.o"
+"keypad\stm32f4xx_hal_dma.o"
+"keypad\stm32f4xx_hal_pwr.o"
+"keypad\stm32f4xx_hal_pwr_ex.o"
+"keypad\stm32f4xx_hal_cortex.o"
+"keypad\stm32f4xx_hal.o"
+"keypad\stm32f4xx_hal_exti.o"
+"keypad\system_stm32f4xx.o"
+--library_type=microlib --strict --scatter "KEYPAD\KEYPAD.sct"
+--summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list "KEYPAD.map" -o KEYPAD\KEYPAD.axf

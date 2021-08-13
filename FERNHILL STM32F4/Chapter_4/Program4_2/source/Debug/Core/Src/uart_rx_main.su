@@ -1,0 +1,5 @@
+uart_rx_main.c:19:5:main	16	static
+uart_rx_main.c:33:6:USART2_init	4	static
+uart_rx_main.c:54:6:USART2_write	16	static
+uart_rx_main.c:60:6:USART2_read	4	static
+uart_rx_main.c:66:6:delayMs	24	static

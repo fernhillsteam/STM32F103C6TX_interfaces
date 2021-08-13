@@ -1,0 +1,6 @@
+core_cm4.h:1688:22:__NVIC_EnableIRQ	16	static
+core_cm4.h:1816:22:__NVIC_SetPriority	16	static
+Nested_int_main.c:33:5:main	8	static,ignoring_inline_asm
+Nested_int_main.c:71:6:TIM3_IRQHandler	8	static
+Nested_int_main.c:79:6:TIM4_IRQHandler	8	static
+Nested_int_main.c:90:6:delayMs	24	static

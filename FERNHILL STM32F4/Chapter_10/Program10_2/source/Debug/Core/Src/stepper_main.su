@@ -1,0 +1,2 @@
+stepper_main.c:13:5:main	16	static
+stepper_main.c:29:6:delayMs	24	static

@@ -1,0 +1,54 @@
+
+/* p7_6.c: Use DAC to generate sine waveform
+ *
+ * This program calculates a lookup table at the initialization to be used
+ * to generate a sine wave output through a DAC.
+ * The DAC is initialized with no buffer or trigger, so every 
+ * write to the DAC data register will change the analog output.
+ * The index of the lookup table is incremented in the loop and 
+ * the data is written to the DAC.
+ * The output of DAC is on pin PA4.
+ *
+ * This program was tested with Keil uVision v5.24a with DFP v2.11.0.
+ */
+#include "stm32f4xx.h"
+
+void delayUs(int n);
+#include <math.h>
+
+#define WAVEFORM_LENGTH 256
+int sinewave[WAVEFORM_LENGTH];
+
+int main (void) {
+    int i;
+    double Radians;
+    const double M_PI = 3.1415926535897;
+
+    /* construct data table for a sine wave */
+    Radians = 2 * M_PI / WAVEFORM_LENGTH;
+
+    for (i = 0; i < WAVEFORM_LENGTH; i++) {
+        sinewave[i] = 2000 * (sin(Radians * i) + 1);
+    }
+    
+    RCC->AHB1ENR |=  1;	            /* enable GPIOA clock */    
+    GPIOA->MODER |=  0x00000300;    /* PA4 analog */
+    
+    /* setup DAC */
+    RCC->APB1ENR |= 1 << 29;        /* enable DAC clock */
+    DAC->CR |= 1;                   /* enable DAC */
+    
+    while (1) {
+        for (i = 0; i < WAVEFORM_LENGTH; i++) {
+            DAC->DHR12R1 = sinewave[i]; /* write value of sinewave to DAC */
+            delayUs(10);
+        }
+    }
+}
+
+/* 16 MHz SYSCLK */
+void delayUs(int n) {
+    int i;
+    for (; n > 0; n--)
+        for (i = 0; i < 3; i++) ;
+}

@@ -1,0 +1,8 @@
+ADC_LM34_main.c:23:5:main	24	static
+ADC_LM34_main.c:49:6:ADC1_init	4	static
+ADC_LM34_main.c:65:6:USART2_init	4	static
+ADC_LM34_main.c:85:5:USART2_write	16	static
+ADC_LM34_main.c:91:6:USART2_read	4	static
+ADC_LM34_main.c:97:6:UART2_SendString	16	static
+ADC_LM34_main.c:103:6:usart2_sendInt	32	static
+ADC_LM34_main.c:112:6:delayMs	24	static
